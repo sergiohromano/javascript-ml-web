@@ -1,16 +1,39 @@
 <!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="description" content="Astro description"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v4.15.10"><title>Astro x SST</title><style>:root{--accent: 136, 58, 234;--accent-light: 224, 204, 250;--accent-dark: 49, 10, 101;--accent-gradient: linear-gradient( 45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60% )}html{font-family:system-ui,sans-serif;background:#13151a;background-size:224px}code{font-family:Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace}main[data-astro-cid-j7pv25f6]{margin:auto;padding:1.5rem;max-width:60ch}form[data-astro-cid-j7pv25f6]{color:#fff;padding:2rem;display:flex;align-items:center;justify-content:space-between;background-color:#23262d;background-image:none;background-size:400%;border-radius:.6rem;background-position:100%;box-shadow:0 4px 6px -1px #0000001a,0 2px 4px -2px #0000001a}button[data-astro-cid-j7pv25f6]{appearance:none;border:0;font-weight:500;border-radius:5px;font-size:.875rem;padding:.5rem .75rem;background-color:#fff;border:1px solid rgb(var(--accent));color:rgb(var(--accent))}button[data-astro-cid-j7pv25f6]:active:enabled{background-color:#eee}
-</style></head> <body>  <main data-astro-cid-j7pv25f6> <form action="https://apiminio.rcodefs.com/sergioromano-bucket/24089d08-1259-4c44-8427-59d2ddb3d4c1?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=tyuiXrwaZl9b1tO1NBMa%2F20241003%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241003T161859Z&X-Amz-Expires=1000&X-Amz-SignedHeaders=host&X-Amz-Signature=84913b731fb8f4aaba354994d9bed3607b2f87bec4651d2eee96ece4b8d69385" data-astro-cid-j7pv25f6> <input name="file" type="file" accept="image/png, image/jpeg" data-astro-cid-j7pv25f6> <button type="submit" data-astro-cid-j7pv25f6>Upload</button> </form> <pre data-astro-cid-j7pv25f6>{}</pre> <script>(function(){const docUuid = "24089d08-1259-4c44-8427-59d2ddb3d4c1";
+</style></head> <body>  <main data-astro-cid-j7pv25f6> <form action="https://apiminio.rcodefs.com/sergioromano-bucket/2b9d4a17-9646-43ca-a0c7-316ab43e6570?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=tyuiXrwaZl9b1tO1NBMa%2F20241003%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241003T162334Z&X-Amz-Expires=1000&X-Amz-SignedHeaders=host&X-Amz-Signature=20d021abc657546e5c89ca21bf62566b45b1fa0827df14833af07146a42fda0b" data-astro-cid-j7pv25f6> <input name="file" type="file" accept="image/png, image/jpeg" data-astro-cid-j7pv25f6> <button type="submit" data-astro-cid-j7pv25f6>Upload</button> </form> <pre data-astro-cid-j7pv25f6>[
+  {
+    &quot;id&quot;: &quot;doc_m1tfjjb9                  &quot;,
+    &quot;name&quot;: &quot;file.png&quot;,
+    &quot;document&quot;: &quot;123123123&quot;,
+    &quot;timeCreated&quot;: &quot;2024-10-03T15:06:57.754Z&quot;,
+    &quot;timeUpdated&quot;: &quot;2024-10-03T15:06:57.754Z&quot;,
+    &quot;timeDeleted&quot;: null
+  },
+  {
+    &quot;id&quot;: &quot;doc_m1tfoosy                  &quot;,
+    &quot;name&quot;: &quot;drizzle-logo.png&quot;,
+    &quot;document&quot;: &quot;c144643b-7bda-403b-aeaa-f417f115e8ea&quot;,
+    &quot;timeCreated&quot;: &quot;2024-10-03T15:10:58.173Z&quot;,
+    &quot;timeUpdated&quot;: &quot;2024-10-03T15:10:58.173Z&quot;,
+    &quot;timeDeleted&quot;: null
+  },
+  {
+    &quot;id&quot;: &quot;doc_m1ti7izr                  &quot;,
+    &quot;name&quot;: &quot;drizzle-logo.png&quot;,
+    &quot;document&quot;: &quot;24089d08-1259-4c44-8427-59d2ddb3d4c1&quot;,
+    &quot;timeCreated&quot;: &quot;2024-10-03T16:21:35.965Z&quot;,
+    &quot;timeUpdated&quot;: &quot;2024-10-03T16:21:35.965Z&quot;,
+    &quot;timeDeleted&quot;: null
+  }
+]</pre> <script>(function(){const docUuid = "2b9d4a17-9646-43ca-a0c7-316ab43e6570";
 const apiUrl = "https://jsml-sergioromano-jsmlsergioromanoopenapiworkerscript.sergiohromano.workers.dev";
 
       const webSocketClient = new WebSocket(apiUrl.replace("https", "wss").replace("http", "ws") + '/ws');
-      webSocketClient.onopen = (event) => {
-        alert("WebSocket is open now.");
-      };
 
       webSocketClient.onmessage = (event) => {
         console.log(event.data);
-        window.location.reload();
+        setTimeout(() => window.location.reload(), 1000);
       };
+
       const form = document.querySelector("form");
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
